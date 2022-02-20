@@ -26,19 +26,31 @@ import { EntityName } from '@backstage/catalog-model';
 
 import { useReaderState } from '../useReaderState';
 
-type TechDocsReaderValue = ReturnType<typeof useReaderState>;
+type TechDocsReaderValue = ReturnType<typeof useReaderState> & {
+  entityName: EntityName;
+  setReady: () => void;
+};
 
 const TechDocsReaderContext = createContext<TechDocsReaderValue>(
   {} as TechDocsReaderValue,
 );
 
+type TechDocsReaderProviderProps = PropsWithChildren<{
+  entityName: EntityName;
+  onReady?: () => void;
+}>;
+
 export const TechDocsReaderProvider = ({
   children,
-  entityRef,
-}: PropsWithChildren<{ entityRef: EntityName }>) => {
+  entityName,
+  onReady = () => {},
+}: TechDocsReaderProviderProps) => {
   const { '*': path } = useParams();
-  const { kind, namespace, name } = entityRef;
-  const value = useReaderState(kind, namespace, name, path);
+  const { kind, namespace, name } = entityName;
+  const state = useReaderState(kind, namespace, name, path);
+
+  const value = { ...state, entityName, setReady: onReady };
+
   return (
     <TechDocsReaderContext.Provider value={value}>
       {children}
@@ -56,10 +68,14 @@ export const TechDocsReaderProvider = ({
  * @internal
  */
 export const withTechDocsReaderProvider =
-  <T extends {}>(Component: ComponentType<T>, entityRef: EntityName) =>
+  <T extends {}>(
+    Component: ComponentType<T>,
+    entityName: EntityName,
+    onReady?: () => void,
+  ) =>
   (props: T) =>
     (
-      <TechDocsReaderProvider entityRef={entityRef}>
+      <TechDocsReaderProvider entityName={entityName} onReady={onReady}>
         <Component {...props} />
       </TechDocsReaderProvider>
     );
