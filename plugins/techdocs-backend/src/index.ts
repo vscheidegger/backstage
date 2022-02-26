@@ -27,8 +27,14 @@ export type {
   OutOfTheBoxDeploymentOptions,
 } from './service';
 
-export { DefaultTechDocsCollator } from './search';
-export type { TechDocsCollatorOptions } from './search';
+export {
+  DefaultTechDocsCollator,
+  DefaultTechDocsCollatorFactory,
+} from './search';
+export type {
+  TechDocsCollatorFactoryOptions,
+  TechDocsCollatorOptions,
+} from './search';
 
 /**
  * @deprecated Use directly from @backstage/techdocs-common
