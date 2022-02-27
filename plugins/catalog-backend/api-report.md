@@ -522,7 +522,7 @@ export type EntitiesSearchFilter = {
   values?: string[];
 };
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 function entity(
   atLocation: LocationSpec,
   newEntity: Entity,
@@ -639,7 +639,7 @@ export class FileReaderProcessor implements CatalogProcessor {
   ): Promise<boolean>;
 }
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 function generalError(
   atLocation: LocationSpec,
   message: string,
@@ -774,13 +774,13 @@ export class GitLabDiscoveryProcessor implements CatalogProcessor {
   ): Promise<boolean>;
 }
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 function inputError(
   atLocation: LocationSpec,
   message: string,
 ): CatalogProcessorResult;
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 function location_2(
   newLocation: LocationSpec,
   optional?: boolean,
@@ -874,7 +874,7 @@ export interface LocationStore {
   listLocations(): Promise<Location_2[]>;
 }
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 function notFoundError(
   atLocation: LocationSpec,
   message: string,
@@ -962,6 +962,31 @@ export type PlaceholderResolverResolveUrl = (
 ) => string;
 
 // @public
+export const processingResult: Readonly<{
+  readonly notFoundError: (
+    atLocation: LocationSpec,
+    message: string,
+  ) => CatalogProcessorResult;
+  readonly inputError: (
+    atLocation: LocationSpec,
+    message: string,
+  ) => CatalogProcessorResult;
+  readonly generalError: (
+    atLocation: LocationSpec,
+    message: string,
+  ) => CatalogProcessorResult;
+  readonly location: (
+    newLocation: LocationSpec,
+    optional?: boolean | undefined,
+  ) => CatalogProcessorResult;
+  readonly entity: (
+    atLocation: LocationSpec,
+    newEntity: Entity,
+  ) => CatalogProcessorResult;
+  readonly relation: (spec: EntityRelationSpec) => CatalogProcessorResult;
+}>;
+
+// @public
 export type RecursivePartial<T> = {
   [P in keyof T]?: T[P] extends (infer U)[]
     ? RecursivePartial<U>[]
@@ -984,7 +1009,7 @@ export interface RefreshService {
   refresh(options: RefreshOptions): Promise<void>;
 }
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 function relation(spec: EntityRelationSpec): CatalogProcessorResult;
 
 declare namespace results {
