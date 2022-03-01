@@ -1,5 +1,13 @@
 # @backstage/techdocs-common
 
+## 0.11.11
+
+### Patch Changes
+
+- 955be6bc7d: adds passing projectID to the Storage client
+- Updated dependencies
+  - @backstage/integration@0.7.6
+
 ## 0.11.10
 
 ### Patch Changes

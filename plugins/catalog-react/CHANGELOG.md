@@ -1,5 +1,22 @@
 # @backstage/plugin-catalog-react
 
+## 0.7.1
+
+### Patch Changes
+
+- 03ec06bf7f: **BREAKING**: Moved **DefaultStarredEntitiesApi** to `@backstage/plugin-catalog`. If you were using this in tests, you can use the new `MockStarredEntitiesApi` from `@backstage/plugin-catalog-react` instead.
+
+  Fixed a risky behavior where `DefaultStarredEntitiesApi` forwarded values to observers that were later mutated.
+
+  Removed the `isStarred` method from `DefaultStarredEntitiesApi`, as it is not part of the `StarredEntitiesApi`.
+
+- 8f0e8e039b: Deprecated `getEntityMetadataEditUrl` and `getEntityMetadataViewUrl` as these just return one annotation from the entity passed in.
+- Updated dependencies
+  - @backstage/core-components@0.9.0
+  - @backstage/core-plugin-api@0.8.0
+  - @backstage/integration@0.7.6
+  - @backstage/plugin-permission-react@0.3.3
+
 ## 0.7.0
 
 ### Minor Changes

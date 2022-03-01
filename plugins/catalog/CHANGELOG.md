@@ -1,5 +1,16 @@
 # @backstage/plugin-catalog
 
+## 0.9.1
+
+### Patch Changes
+
+- 8f0e8e039b: Removed usage of deprecated `getEntityMetadataViewUrl` and `getEntityMetadataEditUrl` helpers.
+- Updated dependencies
+  - @backstage/core-components@0.9.0
+  - @backstage/core-plugin-api@0.8.0
+  - @backstage/plugin-catalog-react@0.7.1
+  - @backstage/integration-react@0.1.24
+
 ## 0.9.0
 
 ### Minor Changes

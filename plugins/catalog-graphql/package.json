@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@backstage/cli": "^0.14.1",
-    "@backstage/test-utils": "^0.2.6",
+    "@backstage/test-utils": "^0.3.0",
     "@graphql-codegen/cli": "^2.3.1",
     "@graphql-codegen/typescript": "^2.4.2",
     "@graphql-codegen/typescript-resolvers": "^2.4.3",

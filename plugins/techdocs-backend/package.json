@@ -39,10 +39,10 @@
     "@backstage/catalog-model": "^0.11.0",
     "@backstage/config": "^0.1.15",
     "@backstage/errors": "^0.2.2",
-    "@backstage/integration": "^0.7.5",
+    "@backstage/integration": "^0.7.6",
     "@backstage/plugin-catalog-common": "^0.1.4",
     "@backstage/search-common": "^0.2.4",
-    "@backstage/techdocs-common": "^0.11.10",
+    "@backstage/techdocs-common": "^0.11.11",
     "@types/express": "^4.17.6",
     "dockerode": "^3.3.1",
     "express": "^4.17.1",
@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@backstage/cli": "^0.14.1",
-    "@backstage/test-utils": "^0.2.6",
+    "@backstage/test-utils": "^0.3.0",
     "@types/dockerode": "^3.3.0",
     "msw": "^0.35.0",
     "supertest": "^6.1.3"

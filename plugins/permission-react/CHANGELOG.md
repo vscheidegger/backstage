@@ -1,5 +1,12 @@
 # @backstage/plugin-permission-react
 
+## 0.3.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @backstage/core-plugin-api@0.8.0
+
 ## 0.3.2
 
 ### Patch Changes
